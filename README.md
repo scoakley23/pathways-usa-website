@@ -12,6 +12,7 @@ for free indefinitely.
 | `styles.css` | Colors, fonts, layout |
 | `config.js` | **Settings: sign-up form, App Store link, contact email** |
 | `main.js` | Sign-up form behavior |
+| `demo.js` | "Try a question" voice demo and its civics questions |
 | `assets/` | Logos, favicon, and the image shown when the link is shared |
 
 Preview locally: `python3 -m http.server 8000`, then open <http://localhost:8000>.

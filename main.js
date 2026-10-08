@@ -91,6 +91,21 @@
     form.focus();
   }
 
+  // "I'm a teacher" / "I'm with an organization" buttons pre-fill the sign-up form.
+  document.querySelectorAll(".js-partner").forEach((link) => {
+    link.addEventListener("click", () => {
+      const roleSelect = document.getElementById("f-role");
+      if (roleSelect) roleSelect.value = link.dataset.role;
+      const questions = document.getElementById("f-questions");
+      if (questions) {
+        questions.placeholder = link.dataset.role === "Teacher or tutor"
+          ? "Tell us about your class: where you teach and how many students you have"
+          : "Tell us about your organization: its name, city, and who you serve";
+      }
+      setTimeout(() => emailInput.focus({ preventScroll: true }), 400);
+    });
+  });
+
   emailInput.addEventListener("input", () => emailInput.removeAttribute("aria-invalid"));
 
   form.addEventListener("submit", async (event) => {

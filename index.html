@@ -32,8 +32,8 @@
       <nav aria-label="Main">
         <ul class="nav-links">
           <li><a href="#how">How it works</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#mission">Our mission</a></li>
+          <li><a href="#try">Try a question</a></li>
+          <li><a href="#partners">For organizations</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
@@ -144,8 +144,64 @@
       </div>
     </section>
 
+    <!-- Try a question -->
+    <section class="section section-tint" id="try">
+      <div class="wrap try">
+        <div class="try-copy">
+          <p class="eyebrow">Try it now</p>
+          <h2>Practice a real civics question</h2>
+          <p>At your naturalization interview, an officer asks the civics questions out loud and
+            you answer out loud. Try it the Pathways way, right here in your browser.</p>
+          <ol class="try-steps">
+            <li><span>1</span> Listen to the question</li>
+            <li><span>2</span> Tap the microphone and say your answer</li>
+            <li><span>3</span> See if you got it right, and why</li>
+          </ol>
+          <p class="small muted">Questions come from the official USCIS civics test. Your browser
+            turns your voice into text; Pathways USA doesn't receive or save any recordings. In some
+            browsers (like Chrome), that speech service is run by the browser's maker.</p>
+        </div>
+
+        <div class="card demo" id="demo" aria-live="polite">
+          <div class="demo-top">
+            <span class="demo-num">Question <b id="demo-num">1</b></span>
+            <span class="demo-score" id="demo-score"></span>
+          </div>
+
+          <button class="listen-btn" id="demo-play" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+            <span id="demo-play-label">Listen to the question</span>
+          </button>
+          <p class="demo-q" id="demo-q" hidden></p>
+          <button class="link-btn" id="demo-show" type="button">Show the question as text</button>
+
+          <div class="demo-answer" id="demo-answer">
+            <button class="mic-btn" id="demo-mic" type="button" aria-label="Answer out loud">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/></svg>
+            </button>
+            <p class="mic-label" id="demo-mic-label">Tap and answer out loud</p>
+            <p class="heard" id="demo-heard" hidden></p>
+            <form class="type-form" id="demo-type">
+              <label class="sr-only" for="demo-input">Type your answer</label>
+              <input id="demo-input" type="text" autocomplete="off" placeholder="Or type your answer" />
+              <button class="btn btn-navy btn-sm" type="submit">Check</button>
+            </form>
+          </div>
+
+          <div class="demo-result" id="demo-result" hidden>
+            <p class="result-title" id="demo-result-title"></p>
+            <p id="demo-result-text"></p>
+            <div class="result-actions">
+              <button class="btn btn-red btn-sm" id="demo-next" type="button">Next question</button>
+              <a class="result-cta" href="#notify">Get the full app at launch →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Features -->
-    <section class="section section-tint" id="features">
+    <section class="section" id="features">
       <div class="wrap">
         <p class="eyebrow">Features</p>
         <h2>A patient tutor, whenever you have a few minutes</h2>
@@ -182,23 +238,42 @@
       </div>
     </section>
 
-    <!-- Who it's for -->
-    <section class="section" id="who">
-      <div class="wrap">
-        <p class="eyebrow">Who it's for</p>
-        <h2>Built for learners, and the people who help them</h2>
-        <div class="audiences">
-          <article class="audience">
-            <h3>Future citizens</h3>
-            <p>Anyone preparing for the civics portion of the U.S. naturalization interview.</p>
+    <!-- Teachers & organizations -->
+    <section class="section section-tint" id="partners">
+      <div class="wrap partners">
+        <div class="partners-copy">
+          <p class="eyebrow">For teachers &amp; organizations</p>
+          <h2>Bring Pathways to your classroom or community</h2>
+          <p>Citizenship teachers, ESL programs, libraries, and community organizations help
+            thousands of people get ready for their interview. Pathways gives your learners a way to
+            keep practicing out loud between classes and appointments.</p>
+          <p>Tell us about your learners and we'll be in touch about how Pathways can help.</p>
+          <div class="partner-actions">
+            <a class="btn btn-red js-partner" href="#notify" data-role="Teacher or tutor">I'm a teacher or tutor</a>
+            <a class="btn btn-outline js-partner" href="#notify" data-role="Community organization">I'm with an organization</a>
+          </div>
+        </div>
+        <div class="partner-cards">
+          <article class="partner-card">
+            <div class="f-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 7l10-4 10 4-10 4L2 7Z"/><path d="M6 9v5c0 1.7 2.7 3 6 3s6-1.3 6-3V9"/></svg></div>
+            <div>
+              <h3>Citizenship &amp; ESL teachers</h3>
+              <p>Give students extra speaking practice between classes, at their own pace.</p>
+            </div>
           </article>
-          <article class="audience">
-            <h3>Teachers &amp; tutors</h3>
-            <p>Citizenship and ESL instructors looking for practice their students can do between classes.</p>
+          <article class="partner-card">
+            <div class="f-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M2 21h20"/><path d="M9 21v-5h6v5"/></svg></div>
+            <div>
+              <h3>Libraries &amp; community centers</h3>
+              <p>Share Pathways with patrons who are preparing for their interview.</p>
+            </div>
           </article>
-          <article class="audience">
-            <h3>Community organizations</h3>
-            <p>Libraries, nonprofits, and volunteer groups that support immigrants on their journey.</p>
+          <article class="partner-card">
+            <div class="f-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21Z"/></svg></div>
+            <div>
+              <h3>Nonprofits &amp; legal service providers</h3>
+              <p>Help clients prepare for the civics test alongside the support you already give.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -324,6 +399,8 @@
       </div>
       <div class="footer-links">
         <a href="#how">How it works</a>
+        <a href="#try">Try a question</a>
+        <a href="#partners">For organizations</a>
         <a href="#mission">Mission</a>
         <a href="#faq">FAQ</a>
         <a class="js-contact" href="#" hidden>Contact</a>
@@ -337,5 +414,6 @@
 
   <script src="config.js"></script>
   <script src="main.js"></script>
+  <script src="demo.js"></script>
 </body>
 </html>
